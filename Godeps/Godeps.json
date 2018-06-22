@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/andyxning/eventarbiter",
+	"ImportPath": "github.com/gigalixir/eventarbiter",
 	"GoVersion": "go1.7",
 	"GodepVersion": "v74",
 	"Packages": [

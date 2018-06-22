@@ -1,9 +1,9 @@
 package pod
 
 import (
-	"github.com/andyxning/eventarbiter/cmd/eventarbiter/conf"
-	"github.com/andyxning/eventarbiter/handler"
-	"github.com/andyxning/eventarbiter/models"
+	"github.com/gigalixir/eventarbiter/cmd/eventarbiter/conf"
+	"github.com/gigalixir/eventarbiter/handler"
+	"github.com/gigalixir/eventarbiter/models"
 	"k8s.io/kubernetes/pkg/api"
 	"k8s.io/kubernetes/pkg/kubelet/events"
 	"strings"

@@ -3,7 +3,7 @@ package stdout
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/andyxning/eventarbiter/models"
+	"github.com/gigalixir/eventarbiter/models"
 	"github.com/golang/glog"
 	"strings"
 )

@@ -2,7 +2,7 @@ package handler
 
 import (
 	"fmt"
-	"github.com/andyxning/eventarbiter/models"
+	"github.com/gigalixir/eventarbiter/models"
 )
 
 var (

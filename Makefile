@@ -15,7 +15,7 @@ fmt:
 
 build: dep fmt vet
 	godep go install -v ./...
-	godep go build -v -ldflags "-X github.com/andyxning/eventarbiter/cmd/eventarbiter/conf.version=$(VERSION) -X github.com/andyxning/eventarbiter/cmd/eventarbiter/conf.commitHash=$(COMMIT_HASH)" -o eventarbiter github.com/andyxning/eventarbiter/cmd/eventarbiter
+	godep go build -v -ldflags "-X github.com/gigalixir/eventarbiter/cmd/eventarbiter/conf.version=$(VERSION) -X github.com/gigalixir/eventarbiter/cmd/eventarbiter/conf.commitHash=$(COMMIT_HASH)" -o eventarbiter github.com/gigalixir/eventarbiter/cmd/eventarbiter
 
 clean:
 	rm eventarbiter

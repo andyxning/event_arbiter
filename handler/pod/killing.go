@@ -10,25 +10,25 @@ import (
 )
 
 const (
-	PodFailedReason = events.FailedToStartContainer
+	PodKillingReason = events.KillingContainer
 )
 
-type failed struct {
+type killing struct {
 	kind             string
 	reason           string
 	alertEventReason string
 }
 
-func NewFailed() models.EventHandler {
-	return failed{
+func NewKilling() models.EventHandler {
+	return killing{
 		kind:             "POD",
-		reason:           PodFailedReason,
-		alertEventReason: "pod_failed",
+		reason:           PodKillingReason,
+		alertEventReason: "pod_killing",
 	}
 }
 
-func (fd failed) HandleEvent(sinks []models.Sink, event *api.Event) {
-	if strings.ToUpper(event.InvolvedObject.Kind) == fd.kind && event.Reason == fd.reason {
+func (bf killing) HandleEvent(sinks []models.Sink, event *api.Event) {
+	if strings.ToUpper(event.InvolvedObject.Kind) == bf.kind && event.Reason == bf.reason {
 		var eventAlert = models.PodEventAlert{
 			Kind:          strings.ToUpper(event.InvolvedObject.Kind),
 			Name:          event.InvolvedObject.Name,
@@ -41,21 +41,21 @@ func (fd failed) HandleEvent(sinks []models.Sink, event *api.Event) {
 		}
 
 		for _, sink := range sinks {
-			sink.Sink(fd.kind, eventAlert)
+			sink.Sink(bf.kind, eventAlert)
 		}
 	}
 }
 
-func (fd failed) AlertEventReason() string {
-	return fd.alertEventReason
+func (bf killing) AlertEventReason() string {
+	return bf.alertEventReason
 }
 
-func (fd failed) Reason() string {
-	return fd.reason
+func (bf killing) Reason() string {
+	return bf.reason
 }
 
 func init() {
-	fd := NewFailed()
-	handler.MustRegisterEventAlertReason(fd.AlertEventReason(), fd)
-	handler.RegisterEventReason(fd.Reason())
+	bf := NewKilling()
+	handler.MustRegisterEventAlertReason(bf.AlertEventReason(), bf)
+	handler.RegisterEventReason(bf.Reason())
 }

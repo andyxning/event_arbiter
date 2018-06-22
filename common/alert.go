@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	defaultTimeout = 2 * time.Second
+	defaultTimeout = 12 * time.Second
 )
 
 func SendAlert(alert io.Reader, url string) error {

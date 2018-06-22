@@ -2,7 +2,7 @@ package kubernetes
 
 import (
 	"fmt"
-	"github.com/andyxning/eventarbiter/models"
+	"github.com/gigalixir/eventarbiter/models"
 	"github.com/golang/glog"
 	backend "k8s.io/heapster/events/sources/kubernetes"
 	"k8s.io/kubernetes/pkg/api"

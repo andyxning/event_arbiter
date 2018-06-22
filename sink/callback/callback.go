@@ -3,8 +3,8 @@ package callback
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/andyxning/eventarbiter/common"
-	"github.com/andyxning/eventarbiter/models"
+	"github.com/gigalixir/eventarbiter/common"
+	"github.com/gigalixir/eventarbiter/models"
 	"github.com/golang/glog"
 	"strings"
 )

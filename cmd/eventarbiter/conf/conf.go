@@ -2,7 +2,7 @@ package conf
 
 import (
 	"errors"
-	"github.com/andyxning/eventarbiter/common/flag"
+	"github.com/gigalixir/eventarbiter/common/flag"
 	"github.com/golang/glog"
 	"k8s.io/heapster/common/flags"
 	"runtime"
